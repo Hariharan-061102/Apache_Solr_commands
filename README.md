@@ -7,8 +7,8 @@ Prerequisite:
 Step by Step Procedure:
 1.	Open the Directory of the Apache Solr and open that path in the terminal.
 2.	Then we have to start the Solr it is done by using the following command
-``` bin\solr start -c
-```
+`bin\solr start -c
+`
 ![image](https://github.com/user-attachments/assets/89d88f0d-ec50-4327-b346-1e8b6f1a7cf6)
 
 
