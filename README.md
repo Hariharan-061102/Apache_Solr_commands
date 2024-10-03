@@ -7,7 +7,8 @@ Prerequisite:
 Step by Step Procedure:
 1.	Open the Directory of the Apache Solr and open that path in the terminal.
 2.	Then we have to start the Solr it is done by using the following command
- bin\solr start -c
+``` bin\solr start -c
+```
 ![image](https://github.com/user-attachments/assets/89d88f0d-ec50-4327-b346-1e8b6f1a7cf6)
 
 
@@ -27,7 +28,8 @@ Step by Step Procedure:
 
 
 4.	We have started the Solr. Now we have to create the collection. It can be done by different ways by sending a POST request to the Server using curl tool by specifying the collection name and the number of Shards and ReplicationFactors.
-curl --request POST --url http://localhost:8983/api/collections --header "Content-Type: application/json" --data "{\"name\":\"EmployeeData\",\"numShards\":1,\"replicationFactor\":1}"
+```curl --request POST --url http://localhost:8983/api/collections --header "Content-Type: application/json" --data "{\"name\":\"EmployeeData\",\"numShards\":1,\"replicationFactor\":1}"
+```
 ![image](https://github.com/user-attachments/assets/9dc7fe1d-f868-4ee8-9804-06e49d536798)
 
 
@@ -51,7 +53,8 @@ curl --request POST --url http://localhost:8983/api/collections --header "Conten
 
 6.	Now we have to define the Schema, it also can be done by using the curl tool by sending POST request. For the required data, the schema is defined by follows
 
-curl --request POST --url http://localhost:8983/api/collections/EmployeeData/schema --header "Content-Type: application/json" --data "{\"add-field\": [{\"name\": \"employee_id\", \"type\": \"string\", \"multiValued\": false},{\"name\": \"full_name\", \"type\": \"text_general\", \"multiValued\": false},{\"name\": \"job_title\", \"type\": \"text_general\", \"multiValued\": false},{\"name\": \"department\", \"type\": \"text_general\", \"multiValued\": false},{\"name\": \"business_unit\", \"type\": \"text_general\", \"multiValued\": false},{\"name\": \"gender\", \"type\": \"string\", \"multiValued\": false},{\"name\": \"ethnicity\", \"type\": \"string\", \"multiValued\": false},{\"name\": \"age\", \"type\": \"pint\", \"multiValued\": false},{\"name\": \"hire_date\", \"type\": \"pdate\", \"multiValued\": false},{\"name\": \"annual_salary\", \"type\": \"pdouble\", \"multiValued\": false},{\"name\": \"bonus_pct\", \"type\": \"pfloat\", \"multiValued\": false},{\"name\": \"country\", \"type\": \"text_general\", \"multiValued\": false},{\"name\": \"city\", \"type\": \"text_general\", \"multiValued\": false},{\"name\": \"exit_date\", \"type\": \"pdate\", \"multiValued\": false}]}"
+```curl --request POST --url http://localhost:8983/api/collections/EmployeeData/schema --header "Content-Type: application/json" --data "{\"add-field\": [{\"name\": \"employee_id\", \"type\": \"string\", \"multiValued\": false},{\"name\": \"full_name\", \"type\": \"text_general\", \"multiValued\": false},{\"name\": \"job_title\", \"type\": \"text_general\", \"multiValued\": false},{\"name\": \"department\", \"type\": \"text_general\", \"multiValued\": false},{\"name\": \"business_unit\", \"type\": \"text_general\", \"multiValued\": false},{\"name\": \"gender\", \"type\": \"string\", \"multiValued\": false},{\"name\": \"ethnicity\", \"type\": \"string\", \"multiValued\": false},{\"name\": \"age\", \"type\": \"pint\", \"multiValued\": false},{\"name\": \"hire_date\", \"type\": \"pdate\", \"multiValued\": false},{\"name\": \"annual_salary\", \"type\": \"pdouble\", \"multiValued\": false},{\"name\": \"bonus_pct\", \"type\": \"pfloat\", \"multiValued\": false},{\"name\": \"country\", \"type\": \"text_general\", \"multiValued\": false},{\"name\": \"city\", \"type\": \"text_general\", \"multiValued\": false},{\"name\": \"exit_date\", \"type\": \"pdate\", \"multiValued\": false}]}"
+```
 
 ![image](https://github.com/user-attachments/assets/6820a096-2815-42c5-a607-a658dfc43781)
 
@@ -99,7 +102,8 @@ curl --request POST --url http://localhost:8983/api/collections/EmployeeData/sch
 
 
 8.	After that we have to index the documents from the csv file. It can be done by sending POST request using curl tool.
-curl "http://localhost:8983/solr/EmployeeData/update?commit=true" --data-binary @C:\Users\harih\Desktop\Employee.csv -H "Content-Type: application/csv"
+```curl "http://localhost:8983/solr/EmployeeData/update?commit=true" --data-binary @C:\Users\harih\Desktop\Employee.csv -H "Content-Type: application/csv"
+```
 
 
 
